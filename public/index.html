@@ -106,11 +106,12 @@
                                 </select>
                             </div>
                             <div>
-                                <h4>OpenAI Model</h4>
+                                <h4>NatDev Model</h4>
                                 <select id="model_openai_select">
                                     <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
-                                    <option value="gpt-3.5-turbo-0301">gpt-3.5-turbo-0301</option>
                                     <option value="gpt-4">gpt-4</option>
+                                    <option value="claude-v1">claude-v1</option>
+                                    <option value="claude-instant-v1.0">claude-instant-v1.0</option>
                                 </select>
                             </div>
                         </div>
@@ -304,7 +305,7 @@
                                     <span id="freq_pen_counter_openai">select</span>
                                 </div>
                                 <div class="range-block-range">
-                                    <input type="range" id="freq_pen_openai" name="volume" min="-2" max="2" step="0.01">
+                                    <input type="range" id="freq_pen_openai" name="volume" min="0" max="1" step="0.01">
                                 </div>
                             </div>
 
@@ -316,7 +317,7 @@
                                     <span id="pres_pen_counter_openai">select</span>
                                 </div>
                                 <div class="range-block-range">
-                                    <input type="range" id="pres_pen_openai" name="volume" min="-2" max="2" step="0.01">
+                                    <input type="range" id="pres_pen_openai" name="volume" min="0" max="1" step="0.01">
                                 </div>
                             </div>
 
@@ -324,7 +325,7 @@
                                 <div class="range-block-title">
                                     Logit Bias
                                 </div>
-                                <div class="openai_logit_bias">
+                                <div class="openai_logit_bias" hidden>
                                     <div class="openai_logit_bias_form">
                                         <input class="text_pole" id="openai_logit_bias_text" placeholder="text (will be converted to tokens)" />
                                         <div class="openai_logit_bias_range_block">
@@ -734,7 +735,7 @@
                         <option value="kobold">KoboldAI</option>
                         <option value="textgenerationwebui">Text generation web UI</option>
                         <option value="novel">NovelAI</option>
-                        <option value="openai">OpenAI</option>
+                        <option value="openai">NatDev</option>
                         <option value="poe">Poe</option>
                     </select>
                 </div>
@@ -836,7 +837,7 @@
                                 <span class="note-link-span">?</span>
                             </a>
                         </h5>
-                        <input id="api_key_openai" name="api_key_openai" class="text_pole" maxlength="500" value="" autocomplete="off">
+                        <input id="api_key_openai" name="api_key_openai" class="text_pole" maxlength="1000" value="" autocomplete="off">
                         <input id="api_button_openai" class="menu_button" type="submit" value="Connect">
                         <img id="api_loading_openai" src="img/load.svg">
                     </form>
@@ -1240,12 +1241,12 @@
                                     <div id="export_button" class="menu_button" title="Export and Download">
                                         <img alt="" class="svg_icon" src="img/file-export-solid.svg">
                                     </div>
-                                    <!-- <div id="create_button" class="menu_button" type="submit" title="Create Character">✅</div> -->
+                                    <!-- <div id="create_button" class="menu_button" type="submit" title="Create Character">??/div> -->
                                     <label for="create_button" id="create_button_label" class="menu_button" title="Create Character">
                                         <input type="submit" id="create_button" name="create_button">
                                         <img alt="" class="svg_icon" src="img/user-check-solid.svg">
                                     </label>
-                                    <!-- <input id="create_button" class="menu_button" title="Create Character" type="submit" value="✅"> -->
+                                    <!-- <input id="create_button" class="menu_button" title="Create Character" type="submit" value="??> -->
                                     <div id="delete_button" class="menu_button" title="Delete Character">
                                         <img alt="" class="svg_icon" src="img/trash-can-solid.svg">
                                     </div>
